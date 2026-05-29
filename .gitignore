@@ -1,1 +1,25 @@
+# ===== Data =====
+# ไฟล์ข้อมูลขนาดใหญ่ ไม่เก็บใน Git (ดูวิธีดาวน์โหลดใน data/README.md)
 *.parquet
+*.csv
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# ===== Jupyter =====
+*.ipynb_checkpoints
+
+# ===== OS / Editor =====
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
