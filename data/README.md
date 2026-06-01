@@ -1,26 +1,21 @@
 # Data
 
 โฟลเดอร์นี้เก็บข้อมูลของโปรเจกต์ ไฟล์ข้อมูลจริง **ไม่ถูกเก็บใน Git** (อยู่ใน `.gitignore`)
-เนื่องจากมีขนาดใหญ่ (ไฟล์ Parquet ~715 MB)
+เนื่องจากมีขนาดเบิ้ม (Parquet ~715 MB)(CSV ต้นฉบับ ~2 GB)
 
 ```
 data/
-├── raw/         # ไฟล์ CSV ต้นฉบับรายเดือน (input ของ notebook 01)
-└── processed/   # ไฟล์ที่ทำความสะอาดแล้ว: cyclistic_cleaned_data.parquet (output ของ notebook 01)
+├── raw/         # ไฟล์ CSV ต้นฉบับรายเดือน 1/1/2024 - 31/3/2026 (input ของ notebook 01)
+└── processed/   # ไฟล์ที่ clean แล้ว: cyclistic_cleaned_data.parquet (output ของ notebook 01)
 ```
 
-## ที่มาของข้อมูล (Data source)
+## Data source
 
 ข้อมูลเป็นชุดข้อมูลสาธารณะของ **Divvy / Cyclistic bike-share (Chicago)**
-เผยแพร่โดย Lyft Bikes and Scooters ภายใต้ [Data License Agreement](https://divvybikes.com/data-license-agreement)
+เผยแพร่โดย Lyft Bikes and Scooters ภายใต้ [Data License Agreement](https://divvybikes.com/data-license-agreement) เป็นข้อมูลจริงแต่ถูกดัดแปลง เช่น ลบข้อมูลส่วนตัวออก ลบข้อมูลความลับบริษัทออก เหลือแค่การขับขี่ที่ให้เราสามารถนำไปใช้ได้
 
-ดาวน์โหลดไฟล์รายเดือนได้ที่: https://divvy-tripdata.s3.amazonaws.com/index.html
+ดาวน์โหลดไฟล์ได้ที่: https://divvy-tripdata.s3.amazonaws.com/index.html (ไฟล์มีการ update ทุกเดือน)
 
-## วิธีเตรียมข้อมูล
-
-1. ดาวน์โหลดไฟล์ CSV รายเดือนที่ต้องการ แล้ววางไว้ในโฟลเดอร์ `data/raw/`
-2. รัน `notebooks/01_data_preparation.ipynb` เพื่อรวมไฟล์ ทำความสะอาด และเพิ่ม feature
-3. notebook จะบันทึกผลลัพธ์เป็น `data/processed/cyclistic_cleaned_data.parquet`
-4. รัน `notebooks/02_exploratory_data_analysis.ipynb` เพื่อทำการวิเคราะห์ต่อ
+## Data dictionary
 
 ดูรายละเอียดคอลัมน์ทั้งหมดได้ที่ [`docs/data_dictionary.md`](../docs/data_dictionary.md)
