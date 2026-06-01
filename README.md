@@ -1,56 +1,60 @@
-# Cyclistic - Google Data Analytics Capstone Project
+# Cyclistic Bike Share - Google Data Analytics Capstone Project
 
-> Capstone project ของ **Google Data Analytics Professional Certificate**
-> วิเคราะห์ข้อมูลการใช้งานจักรยานสาธารณะ Cyclistic ในเมือง Chicago เพื่อหาความแตกต่างของพฤติกรรม
-> ระหว่าง **สมาชิกรายปี (member)** กับ **ผู้ใช้ทั่วไป (casual)** เพื่อคิดแผนการตลาดในการเปลี่ยน casual ให้เป็น member
+by Pluemprach Dangdee (Ne)
+
+![alt text](Screenshot2026-06-01233557.png)
+
+โปรเจคนี้ คือ Capstone ของ **Google Data Analytics Professional Certificate**
+
+โจทย์ คือ วิเคราะห์ข้อมูลการใช้งานจักรยานขอลลลูกค้า Cyclistic ใน Chicago เพื่อหาความแตกต่างของพฤติกรรม
+ระหว่าง **สมาชิกรายปี (member)** กับ **ผู้ใช้ทั่วไป (casual)**
+เพื่อคิดแผนการตลาดในการเปลี่ยน casual ให้เป็น member
 
 ---
 
 ## Background
 
-Cyclistic เป็นบริษัทให้บริการเช่าจักรยานในเมือง Chicago ทีมการตลาดเชื่อว่ากุญแจสำคัญของการเติบโต
-คือการเปลี่ยน **casual rider** ให้กลายเป็น **annual member** โปรเจกต์นี้จึงวิเคราะห์ข้อมูลการเดินทางจริง
+Cyclistic เป็นบริษัทให้บริการเช่าจักรยานในเมือง Chicago ทีมการตลาดและการเงินเชื่อว่ากุญแจสำคัญของการเติบโต
+คือการเปลี่ยน **ผู้ใช้ทั่วไป (casual rider)** ให้กลายเป็น **สมาชิกรายปี (annual member)** โปรเจกต์นี้จึงวิเคราะห์ข้อมูลการเดินทางจริง
 กว่า **11.7 ล้านรายการ (ปี 2024–2026)** เพื่อทำความเข้าใจว่าผู้ใช้ทั้งสองกลุ่มใช้บริการต่างกันอย่างไร
-
-โปรเจกต์ดำเนินตามกรอบการทำงาน 6 ขั้นของ Google Data Analytics:
-**Ask → Prepare → Process → Analyze → Share → Act**
 
 ## Business Task
 
-> *"สมาชิกรายปีและผู้ใช้ทั่วไปใช้บริการจักรยาน Cyclistic แตกต่างกันอย่างไร?"*
+ในโจทย์เราจะต้องตอบคำถามสำคัญที่โจทย์ไกด์ให้เรานี้ให้ได้ ได้แก่
+> *" สมาชิกรายปีและผู้ใช้ทั่วไปใช้บริการจักรยาน Cyclistic แตกต่างกันอย่างไร ? "*
 
-ผลการวิเคราะห์จะนำไปสนับสนุนกลยุทธ์การตลาดเพื่อเปลี่ยน casual rider ให้เป็นสมาชิกรายปี
+> *" ทำไมผู้ใช้ทั่วไปถึงจะตัดสินใจซื้อสมาชิกรายปีของ Cyclistic ? "*
+
+> *" Cyclistics จะสามารถใช้สื่อดิจิตัลเพื่อจูงใจให้ผู้ใช้งานทั่วไปเปลี่ยนมาเป็นสมาชิกได้อย่างไร ? "*
+
+
+ผลการวิเคราะห์จะนำไปสู่การตอบคำถามเหล่านี้ และช่วยในการแนะนำกลยุทธ์การตลาดเพื่อเปลี่ยน casual ให้เป็น member
 
 ## Data Source
 
-ข้อมูลสาธารณะของ **Divvy / Cyclistic bike-share** เผยแพร่โดย Lyft Bikes and Scooters
-ภายใต้ [Data License Agreement](https://divvybikes.com/data-license-agreement)
-ดาวน์โหลดไฟล์รายเดือนได้ที่ https://divvy-tripdata.s3.amazonaws.com/index.html
+ข้อมูลเป็นชุดข้อมูลสาธารณะของ Divvy / Cyclistic bike-share (Chicago) เผยแพร่โดย Lyft Bikes and Scooters ภายใต้ Data License Agreement เป็นข้อมูลจริงแต่ถูกดัดแปลง เช่น ลบข้อมูลส่วนตัวออก ลบข้อมูลความลับบริษัทออก เหลือแค่การขับขี่ที่ให้เราสามารถนำไปใช้ได้
 
-รายละเอียดข้อมูลและคอลัมน์ทั้งหมดดูได้ที่ [`docs/data_dictionary.md`](docs/data_dictionary.md)
-และวิธีเตรียมไฟล์ดูได้ที่ [`data/README.md`](data/README.md)
+ดาวน์โหลดไฟล์ : https://divvy-tripdata.s3.amazonaws.com/index.html (ไฟล์มีการ update ให้ทุกเดือน มีจำนวนมหาศาลมากสามารถต่อยอดในการฝึกหรือทำโปรเจคได้อีกเยอะ)
 
-> ไฟล์ข้อมูล (`.csv`, `.parquet`) ไม่ถูกเก็บไว้ใน repository นี้เนื่องจากมีขนาดใหญ่
-> (ไฟล์ Parquet ~715 MB) — กรุณาดาวน์โหลดและเตรียมข้อมูลตามขั้นตอนใน `data/README.md`
+รายละเอียดข้อมูลและคอลัมน์ : [`docs/data_dictionary.md`](docs/data_dictionary.md)
 
 ## Project Structure
 
 ```
 google-cyclistic-capstone/
-├── data/
+├── data/                 # folder มีไว้เป็นพิธี เพราะไฟล์จริงเอาขึ้นมาไม่ได้ ;-;
 │   ├── raw/              # ไฟล์ CSV ต้นฉบับรายเดือน (ไม่เก็บใน Git)
 │   ├── processed/        # ไฟล์ที่ทำความสะอาดแล้ว .parquet (ไม่เก็บใน Git)
-│   └── README.md         # ที่มาของข้อมูลและวิธีเตรียมข้อมูล
+│   └── README.md         # ที่มาของข้อมูล
 ├── notebooks/
-│   ├── 01_data_preparation.ipynb           # รวมไฟล์ + ทำความสะอาด + เพิ่ม feature
-│   └── 02_exploratory_data_analysis.ipynb  # วิเคราะห์ + สร้างกราฟ
+│   ├── 01_data_preparation.ipynb           # รวมไฟล์ + data cleaning + add features
+│   └── 02_exploratory_data_analysis.ipynb  # วิเคราะห์ + dataviz
 ├── reports/
-│   └── cyclistic_capstone_report.pdf       # รายงานฉบับสมบูรณ์
+│   └── cyclistic_capstone_report.pdf       # รายงาน pdf
 ├── docs/
-│   └── data_dictionary.md                  # คำอธิบายคอลัมน์ข้อมูล
-├── requirements.txt      # Python dependencies
+│   └── data_dictionary.md                  # คำอธิบายข้อมูล
 ├── .gitignore
-├── LICENSE               # MIT
+├── LICENSE
 └── README.md
 ```
 
@@ -70,28 +74,32 @@ google-cyclistic-capstone/
 
 ### EDA — `02_exploratory_data_analysis.ipynb`
 
-เปรียบเทียบพฤติกรรมระหว่าง **member** และ **casual** ในหลายมิติ:
+เปรียบเทียบพฤติกรรมระหว่าง **member** และ **casual** :
 
 - **จำนวนเที่ยว & ระยะเวลา** — ภาพรวมและการเติบโตแบบ year-on-year
 - **ประเภทจักรยาน** (`rideable_type`) ที่แต่ละกลุ่มเลือกใช้
 - **วันในสัปดาห์** — เปรียบเทียบวันธรรมดากับวันหยุดสุดสัปดาห์
 - **เดือนและฤดูกาล** — รูปแบบตามฤดู (seasonality)
 - **ชั่วโมงในแต่ละวัน** — ช่วงเวลาเร่งด่วน (commute) vs ช่วงพักผ่อน
-- **สถานียอดนิยม** และการเดินทางแบบ `On-street`
+- **สถานียอดนิยม** และ **เส้นทางการเดินทาง**
 
 ## Report
 
+**รายงานวิเคราะห์พร้อมภาพ :**
 [`reports/cyclistic_capstone_report.pdf`](reports/cyclistic_capstone_report.pdf)
+
+สามารถนำไปดูและต่อยอดได้เลย
 
 ## Tools
 
-|  | Tool |
+| Category | Tool |
 |------|-----------|
 | Language | Python |
-| จัดการข้อมูล | pandas, numpy |
-| จัดเก็บข้อมูล | Parquet (pyarrow) |
-| visualization | matplotlib, seaborn, plotly |
+| Data wrangling | pandas, numpy |
+| Data storing | Parquet (pyarrow) |
+| Visualization | matplotlib, seaborn, plotly |
 
+**Note** : ถ้าเป็นโจทย์จากต้นฉบับของคอร์สจริงๆ จะให้เราใช้ Spreadsheet, SQL + Tableau หรือ ภาษา R ที่ผมเลือกใช้ Python เพราะมันสามารถทำงานกับข้อมูล CSV ดิบๆ หลักหลายล้าน rows ได้ดีกว่า ยืดหยุ่นกว่า และชอบเป็นการส่วนตัว (จริงๆทางคอร์สไม่ได้กะจะให้เราทำเยอะขนาดนี้อยู่แล้ว555)
 
 ## 📄 License
 
