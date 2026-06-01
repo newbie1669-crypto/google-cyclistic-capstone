@@ -1,5 +1,4 @@
 # ===== Data =====
-# ไฟล์ข้อมูลขนาดใหญ่ ไม่เก็บใน Git (ดูวิธีดาวน์โหลดใน data/README.md)
 *.parquet
 *.csv
 data/raw/*
