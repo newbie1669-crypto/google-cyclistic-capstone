@@ -2,7 +2,7 @@
 
 By Pluemprach Dangdee (Ne).
 
-<img src="docs/image/victor_victor.png" width="250" alt="bike">
+<img src="docs/image/victor_victor.png" alt="bike">
 
 โปรเจคนี้ คือ Capstone ของ **Google Data Analytics Professional Certificate** ที่ผมเคยเรียนจบเมื่อนานมาแล้ว ตั้งแต่ 2024 แต่ผมทำโปรเจคเดิมหาย เลยทำใหม่เป็นตัวนี้ ;-;
 
