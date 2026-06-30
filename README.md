@@ -2,9 +2,9 @@
 
 By Pluemprach Dangdee (Ne).
 
-![victor victor!!!](docs\image\victor_victor.png)
+<img src="docs/image/victor_victor.png" width="250" alt="bike">
 
-โปรเจคนี้ คือ Capstone ของ **Google Data Analytics Professional Certificate** ที่ผมเรียนจบเมื่อนานมาแล้ว ตั้งแต่ 2024 แต่ผมทำโปรเจคเดิมหาย เลยทำใหม่เป็นตัวนี้ ;-;
+โปรเจคนี้ คือ Capstone ของ **Google Data Analytics Professional Certificate** ที่ผมเคยเรียนจบเมื่อนานมาแล้ว ตั้งแต่ 2024 แต่ผมทำโปรเจคเดิมหาย เลยทำใหม่เป็นตัวนี้ ;-;
 
 โจทย์ คือ วิเคราะห์ข้อมูลการใช้งานจักรยานของลูกค้า Cyclistic ใน Chicago เพื่อหาความแตกต่างของพฤติกรรม
 ระหว่าง **สมาชิกรายปี (member)** กับ **ผู้ใช้ทั่วไป (casual)**
@@ -103,6 +103,6 @@ google-cyclistic-capstone/
 
 ## 📄 License
 
-This Project : [`LICENSE`](LICENSE)
+Repo : [`LICENSE`](LICENSE)
 
 Data : [Divvy Data License Agreement](https://divvybikes.com/data-license-agreement)
