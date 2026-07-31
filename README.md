@@ -124,12 +124,6 @@ Compare behavior between **member** and **casual**:
 
 ---
 
-## **Value Estimation**
-
-*in-progress*
-
----
-
 ## **Report**
 
 **Full analysis report with visuals and recommendations :** [`reports/`](reports/)
